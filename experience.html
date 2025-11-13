@@ -5,7 +5,9 @@
   <title>Experience | Devesh Maheshwari</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -31,53 +33,77 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Experience</h2>
+        
+        <!-- Page Header -->
+        <div class="section-header reveal">
+          <h2>Professional Experience</h2>
           <p>
-            Roles across startups and consulting, with a consistent focus on NLP, LLMs,
-            and making ML systems production-ready. :contentReference[oaicite:3]{index=3}
+            A journey across data science, NLP engineering, and end-to-end AI product development — 
+            from consulting to healthcare intelligence to LLM-driven personalization.
           </p>
         </div>
 
+        <!-- Experience Timeline -->
         <div class="experience-grid">
-          <article class="experience-card">
+
+          <!-- Auxia -->
+          <article class="experience-card reveal">
             <p class="exp-role">Data Scientist — Auxia</p>
             <p class="exp-meta">Jan 2025 – Aug 2025 · Bengaluru, India</p>
+            
             <ul class="exp-bullets">
-              <li>Built standalone treatment embedding pipelines (OpenAI + SBERT) with enriched metadata, improving target prediction accuracy and enabling client-specific flexibility.</li>
-              <li>Automated and standardized ML training workflows with orchestration tools, cutting manual coding and training time while enabling cron-scheduled deployments.</li>
-              <li>Prototyped behavioral segmentation using LLM-generated user summaries from event logs to uncover latent user groups and improve CTR models.</li>
+              <li>Built standalone treatment-embedding pipelines (OpenAI, SBERT, custom dense representations) improving match accuracy for personalization engines.</li>
+              <li>Automated standardized ML workflow orchestrations—reducing manual training cycle time and enabling scheduled retraining & experiments.</li>
+              <li>Developed user-behavior sequence summaries using LLMs over event logs; used for segmentation and uplift-based targeting.</li>
+              <li>Collaborated closely with founding engineers to convert research prototypes into client-facing production modules.</li>
             </ul>
           </article>
 
-          <article class="experience-card">
+          <!-- HiLabs -->
+          <article class="experience-card reveal">
             <p class="exp-role">Data Scientist II — HiLabs</p>
             <p class="exp-meta">Apr 2023 – Jan 2025 · Pune, India</p>
+
             <ul class="exp-bullets">
-              <li>Led clinical NLP initiatives for a flagship Provider Directory Accuracy product, helping win multi-million-dollar Fortune 500 contracts.</li>
-              <li>Applied LLMs and encoder-based models (T5, BioBERT, Mistral, LLaMA) for entity extraction and abbreviation expansion, reaching high F1 scores while optimizing latency.</li>
-              <li>Contributed to RAG-style QA systems for healthcare clients by building strong entity-level representations from charts and web content.</li>
+              <li>Led clinical NLP components of a Provider Directory Accuracy platform used by Fortune 500 health plans.</li>
+              <li>Implemented models like T5, BioBERT, ClinicalBERT, Mistral & LLaMA for entity-recognition, abbreviation expansion, and fuzzy medical mapping.</li>
+              <li>Designed RAG-style QA pipelines using healthcare charts, CMS documentation, and web data — with emphasis on correctness & hallucination reduction.</li>
+              <li>Improved pipeline latency and model throughput by >30% through quantization, batching and optimized inference workloads.</li>
             </ul>
           </article>
 
-          <article class="experience-card">
+          <!-- PUBLICIS SAPIENT (Spring Financials + other clients) -->
+          <article class="experience-card reveal">
             <p class="exp-role">Senior Associate, Data Scientist — Publicis Sapient</p>
             <p class="exp-meta">Jun 2021 – Apr 2023 · Gurugram, India</p>
+
+            <h4 style="margin-top:0.8rem;margin-bottom:0.4rem;">Spring Financials (Canada) — Primary AI Engagement</h4>
             <ul class="exp-bullets">
-              <li>Converted multiple NLP models into containerized microservices on AWS (ECS/EKS), improving scalability and reducing cloud costs.</li>
-              <li>Designed an AI-enabled chatbot for a large financial client, significantly reducing manual support needs and case volumes.</li>
-              <li>Built a video processing pipeline to generate transcripts and searchable MCQs, cutting manual content preparation time.</li>
+              <li>Built a fully automated ML-driven customer support assistant using NLP classification, summarization and retrieval modules.</li>
+              <li>Improved financial product personalization by designing uplift-modeling and cross-sell ranking workflows.</li>
+              <li>Developed a self-serve content intelligence pipeline extracting insights from customer emails, call transcripts & documents.</li>
+            </ul>
+
+            <h4 style="margin-top:1rem;margin-bottom:0.4rem;">Other Projects at PS</h4>
+            <ul class="exp-bullets">
+              <li>Containerized multiple NLP models & deployed them as scalable microservices on AWS (ECS/EKS) reducing API latency by 40%.</li>
+              <li>Built video-to-transcript-to-MCQ pipeline to semi-automate educational content creation.</li>
+              <li>Created analytics pipelines & dashboards for customer journey prediction and funnel risk scoring.</li>
             </ul>
           </article>
 
-          <article class="experience-card">
-            <p class="exp-role">Earlier projects & internships</p>
-            <p class="exp-meta">IIT (BHU) and early roles</p>
+          <!-- Early Experience -->
+          <article class="experience-card reveal">
+            <p class="exp-role">Internships & Early Applied ML Work</p>
+            <p class="exp-meta">IIT (BHU) + Freelance + Research</p>
+
             <ul class="exp-bullets">
-              <li>Projects in networks, security, and traditional ML that led to my IEEE Chilecon 2021 publication.</li>
-              <li>Course and project work in algorithms, NLP, and optimization that laid the foundation for my current work.</li>
+              <li>Built traditional ML models and security/graphs research projects leading to an IEEE Chilecon publication.</li>
+              <li>Developed several academic-grade prototypes in optimization, ML, systems, and algorithmic modeling during undergrad.</li>
+              <li>Worked on early NLP projects including topic models, classic embeddings, and web-scraping-based data pipelines.</li>
             </ul>
           </article>
+
         </div>
 
       </div>
@@ -88,13 +114,12 @@
     <div class="container footer-inner">
       <span>© <span id="year"></span> Devesh Maheshwari</span>
       <span class="footer-meta">
-        Full experience details on <a href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a> ·
+        <a href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ" target="_blank">Google Scholar</a>
       </span>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
