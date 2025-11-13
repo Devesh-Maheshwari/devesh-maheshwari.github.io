@@ -2,124 +2,258 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Experience | Devesh Maheshwari</title>
+  <title>Experience Timeline | Devesh Maheshwari</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/styles.css" />
   <script src="assets/script.js" defer></script>
+
+  <style>
+    /* ------- TIMELINE CONTAINER -------- */
+    .timeline-wrapper {
+      position: relative;
+      padding-top: 2rem;
+    }
+
+    .timeline-svg {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      width: 6px;
+      height: 100%;
+    }
+
+    .timeline-svg path {
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      transition: stroke-dashoffset 1.2s ease-out;
+    }
+
+    .timeline-svg.draw path {
+      stroke-dashoffset: 0;
+    }
+
+    .timeline-items {
+      margin-left: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
+    }
+
+    /* ------- TIMELINE NODES -------- */
+    .timeline-node {
+      position: relative;
+      padding: 1.4rem 1.4rem 1.2rem 1.4rem;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(120deg, #2563eb, #22c55e);
+      border-radius: 50%;
+      position: absolute;
+      left: -55px;
+      top: 20px;
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.4);
+    }
+
+    .timeline-node h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-family: "Space Grotesk";
+    }
+
+    .timeline-date {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <span class="logo-mark">DM</span>
-        <span class="logo-text">Devesh Maheshwari</span>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="experience.html" class="nav-active">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="header-cta">
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        
-        <!-- Page Header -->
-        <div class="section-header reveal">
-          <h2>Professional Experience</h2>
-          <p>
-            A journey across data science, NLP engineering, and end-to-end AI product development — 
-            from consulting to healthcare intelligence to LLM-driven personalization.
-          </p>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <span class="logo-mark">DM</span>
+      <span class="logo-text">Devesh Maheshwari</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html" class="nav-active">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+<section class="section">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <h2>My Professional & Academic Journey</h2>
+      <p>A timeline from IIT BHU → Publicis Sapient → HiLabs → Spring Financials → Auxia → UW–Madison</p>
+    </div>
+
+    <div class="timeline-wrapper">
+
+      <!-- TIMELINE SVG -->
+      <svg class="timeline-svg" viewBox="0 0 10 2000" preserveAspectRatio="none">
+        <path d="M5 0 L5 2000" stroke="url(#grad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="40%" stop-color="#22c55e"/>
+            <stop offset="100%" stop-color="#f59e0b"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- TIMELINE ITEMS -->
+      <div class="timeline-items">
+
+        <!-- IIT BHU -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>IIT (BHU) Varanasi — B.Tech</h3>
+          <div class="timeline-date">Aug 2017 – May 2021</div>
+          <ul class="exp-bullets">
+            <li>Studied Electrical Engineering with strong focus on ML, optimization, algorithms.</li>
+            <li>Built early NLP + ML prototypes; published IEEE Chilecon paper.</li>
+          </ul>
         </div>
 
-        <!-- Experience Timeline -->
-        <div class="experience-grid">
-
-          <!-- Auxia -->
-          <article class="experience-card reveal">
-            <p class="exp-role">Data Scientist — Auxia</p>
-            <p class="exp-meta">Jan 2025 – Aug 2025 · Bengaluru, India</p>
-            
-            <ul class="exp-bullets">
-              <li>Built standalone treatment-embedding pipelines (OpenAI, SBERT, custom dense representations) improving match accuracy for personalization engines.</li>
-              <li>Automated standardized ML workflow orchestrations—reducing manual training cycle time and enabling scheduled retraining & experiments.</li>
-              <li>Developed user-behavior sequence summaries using LLMs over event logs; used for segmentation and uplift-based targeting.</li>
-              <li>Collaborated closely with founding engineers to convert research prototypes into client-facing production modules.</li>
-            </ul>
-          </article>
-
-          <!-- HiLabs -->
-          <article class="experience-card reveal">
-            <p class="exp-role">Data Scientist II — HiLabs</p>
-            <p class="exp-meta">Apr 2023 – Jan 2025 · Pune, India</p>
-
-            <ul class="exp-bullets">
-              <li>Led clinical NLP components of a Provider Directory Accuracy platform used by Fortune 500 health plans.</li>
-              <li>Implemented models like T5, BioBERT, ClinicalBERT, Mistral & LLaMA for entity-recognition, abbreviation expansion, and fuzzy medical mapping.</li>
-              <li>Designed RAG-style QA pipelines using healthcare charts, CMS documentation, and web data — with emphasis on correctness & hallucination reduction.</li>
-              <li>Improved pipeline latency and model throughput by >30% through quantization, batching and optimized inference workloads.</li>
-            </ul>
-          </article>
-
-          <!-- PUBLICIS SAPIENT (Spring Financials + other clients) -->
-          <article class="experience-card reveal">
-            <p class="exp-role">Senior Associate, Data Scientist — Publicis Sapient</p>
-            <p class="exp-meta">Jun 2021 – Apr 2023 · Gurugram, India</p>
-
-            <h4 style="margin-top:0.8rem;margin-bottom:0.4rem;">Spring Financials (Canada) — Primary AI Engagement</h4>
-            <ul class="exp-bullets">
-              <li>Built a fully automated ML-driven customer support assistant using NLP classification, summarization and retrieval modules.</li>
-              <li>Improved financial product personalization by designing uplift-modeling and cross-sell ranking workflows.</li>
-              <li>Developed a self-serve content intelligence pipeline extracting insights from customer emails, call transcripts & documents.</li>
-            </ul>
-
-            <h4 style="margin-top:1rem;margin-bottom:0.4rem;">Other Projects at PS</h4>
-            <ul class="exp-bullets">
-              <li>Containerized multiple NLP models & deployed them as scalable microservices on AWS (ECS/EKS) reducing API latency by 40%.</li>
-              <li>Built video-to-transcript-to-MCQ pipeline to semi-automate educational content creation.</li>
-              <li>Created analytics pipelines & dashboards for customer journey prediction and funnel risk scoring.</li>
-            </ul>
-          </article>
-
-          <!-- Early Experience -->
-          <article class="experience-card reveal">
-            <p class="exp-role">Internships & Early Applied ML Work</p>
-            <p class="exp-meta">IIT (BHU) + Freelance + Research</p>
-
-            <ul class="exp-bullets">
-              <li>Built traditional ML models and security/graphs research projects leading to an IEEE Chilecon publication.</li>
-              <li>Developed several academic-grade prototypes in optimization, ML, systems, and algorithmic modeling during undergrad.</li>
-              <li>Worked on early NLP projects including topic models, classic embeddings, and web-scraping-based data pipelines.</li>
-            </ul>
-          </article>
-
+        <!-- Codeflow Internship -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>CodeFlow Tech — Software Developer Intern</h3>
+          <div class="timeline-date">May 2018 – July 2018</div>
+          <ul class="exp-bullets">
+            <li>Django backend + React frontend development.</li>
+            <li>Built interactive dashboards & API-connected workflows.</li>
+          </ul>
         </div>
 
-      </div>
-    </section>
-  </main>
+        <!-- Publicis Internship -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>Publicis Sapient — Data Science Intern</h3>
+          <div class="timeline-date">May 2020 – June 2020</div>
+          <ul class="exp-bullets">
+            <li>Worked on NLP prototypes, data pipelines, and model evaluation.</li>
+            <li>Built groundwork for conversion to full-time DS role.</li>
+          </ul>
+        </div>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Devesh Maheshwari</span>
-      <span class="footer-meta">
-        <a href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a> ·
-        <a href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ" target="_blank">Google Scholar</a>
-      </span>
-    </div>
-  </footer>
+        <!-- Publicis Full-Time -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>Publicis Sapient — Senior Associate Data Scientist</h3>
+          <div class="timeline-date">July 2021 – Apr 2023</div>
+          <ul class="exp-bullets">
+            <li>Worked with multiple clients including fintech and enterprise clients.</li>
+            <li>Built NLP microservices deployed on AWS ECS/EKS.</li>
+            <li>Automated video → transcript → MCQ content pipelines.</li>
+          </ul>
+        </div>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        <!-- HiLabs -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>HiLabs — Data Scientist II</h3>
+          <div class="timeline-date">Apr 2023 – Aug 2024</div>
+          <ul class="exp-bullets">
+            <li>Led clinical NLP systems for Provider Directory Accuracy.</li>
+            <li>Worked with BioBERT, ClinicalBERT, T5, LLaMA, Mistral models.</li>
+            <li>Built RAG pipelines for healthcare QA over medical charts & CMS docs.</li>
+          </ul>
+        </div>
+
+        <!-- Spring Financials -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>Spring Financials — Machine Learning Engineer</h3>
+          <div class="timeline-date">Aug 2024 – Jan 2025</div>
+          <ul class="exp-bullets">
+            <li>Developed ML-driven customer support assistant.</li>
+            <li>Personalization uplift models for finance customers.</li>
+            <li>Data intelligence pipelines from emails, transcripts, documents.</li>
+          </ul>
+        </div>
+
+        <!-- Auxia -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>Auxia — Data Scientist</h3>
+          <div class="timeline-date">Jan 2025 – Aug 2025</div>
+          <ul class="exp-bullets">
+            <li>Built treatment embeddings (OpenAI, SBERT, custom dense reps).</li>
+            <li>Automated ML retraining workflows.</li>
+            <li>Developed LLM-based event-log summarization for segments.</li>
+          </ul>
+        </div>
+
+        <!-- UW Madison -->
+        <div class="timeline-node reveal">
+          <div class="timeline-dot"></div>
+          <h3>University of Wisconsin–Madison — MSCS</h3>
+          <div class="timeline-date">Aug 2025 – Dec 2026</div>
+          <ul class="exp-bullets">
+            <li>Graduate coursework in ML, advanced NLP, DB systems, operating systems.</li>
+            <li>Research & hands-on AI system building.</li>
+          </ul>
+        </div>
+
+      </div> <!-- end items -->
+
+    </div> <!-- end wrapper -->
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Devesh Maheshwari</span>
+    <span class="footer-meta">
+      <a href="https://www.linkedin.com/in/devesh32/">LinkedIn</a> · 
+      <a href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ">Google Scholar</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Scroll-activated timeline draw */
+const path = document.querySelector(".timeline-svg path");
+function drawTimeline() {
+  const rect = path.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  if (rect.top < windowHeight * 0.8) {
+    document.querySelector(".timeline-svg").classList.add("draw");
+  }
+}
+window.addEventListener("scroll", drawTimeline);
+drawTimeline();
+</script>
+
 </body>
 </html>
