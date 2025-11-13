@@ -12,91 +12,244 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     /* -------------------------------------------
-       HOMEPAGE CUSTOM STYLING — A2 CREATIVE
+       HOMEPAGE ADVANCED STYLING
     --------------------------------------------*/
 
-    /* Floating Blobs (background elements) */
-    .blob {
+    /* Ambient background gradient mesh */
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    }
+
+    .gradient-orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.55;
+      filter: blur(120px);
+      opacity: 0.4;
       z-index: -1;
-      animation: blobFloat 18s ease-in-out infinite;
+      animation: orbFloat 25s ease-in-out infinite;
     }
 
-    .blob1 {
-      width: 360px;
-      height: 360px;
-      background: #60a5fa;
-      top: -80px;
-      right: -100px;
-      animation-delay: 0s;
+    .orb1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+      top: -200px;
+      right: -150px;
     }
 
-    .blob2 {
-      width: 260px;
-      height: 260px;
-      background: #34d399;
-      bottom: -100px;
-      left: -60px;
-      animation-delay: 3s;
+    .orb2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent 70%);
+      bottom: -150px;
+      left: -100px;
+      animation-delay: 8s;
     }
 
-    .blob3 {
-      width: 200px;
-      height: 200px;
-      background: #fbbf24;
-      top: 50%;
-      left: 30%;
-      animation-delay: 6s;
+    .orb3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.25), transparent 70%);
+      top: 40%;
+      right: 20%;
+      animation-delay: 15s;
     }
 
-    @keyframes blobFloat {
-      0%   { transform: translate(0,0) scale(1); opacity: .6; }
-      33%  { transform: translate(40px,-30px) scale(1.15); opacity: .7; }
-      66%  { transform: translate(-30px,20px) scale(0.95); opacity: .5; }
-      100% { transform: translate(0,0) scale(1); opacity: .6; }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -80px) scale(1.1); }
+      66% { transform: translate(-30px, 60px) scale(0.9); }
     }
 
-    /* Parallax hero shapes */
-    .parallax-shape {
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #2563eb55, #22c55e55);
-      filter: blur(10px);
+    /* Dot grid pattern overlay */
+    .dot-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
-      transition: transform 0.2s ease-out;
+      background-image: radial-gradient(circle, rgba(100, 116, 139, 0.15) 1px, transparent 1px);
+      background-size: 30px 30px;
+      opacity: 0.5;
     }
 
-    .shape1 { top: 20%; left: 10%; }
-    .shape2 { bottom: 25%; right: 12%; }
-    .shape3 { top: 55%; right: 35%; }
-
-    /* Typewriter rotating text wrapper */
-    .rotate-wrapper {
-      font-size: 1.05rem;
-      margin-top: 0.8rem;
-      font-weight: 500;
-      color: var(--accent-strong);
+    /* Enhanced hero grid layout */
+    .hero-wrapper {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
     }
-    .cursor {
+
+    /* Typewriter effect */
+    .typewriter {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      color: #64748b;
+      font-style: italic;
+      margin-top: 1.5rem;
+      min-height: 1.8rem;
+    }
+
+    .typewriter-cursor {
       display: inline-block;
       width: 2px;
-      height: 1.05em;
-      background: var(--accent-strong);
-      margin-left: 2px;
-      animation: blink 1s infinite step-end;
+      height: 1.2em;
+      background: #6366f1;
+      margin-left: 4px;
+      animation: cursorBlink 1.2s infinite;
+      vertical-align: middle;
     }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50.01%, 100% { opacity: 0; }
+
+    @keyframes cursorBlink {
+      0%, 45% { opacity: 1; }
+      50%, 95% { opacity: 0; }
+    }
+
+    /* Stat cards with glassmorphism */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 16px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    /* Tech stack pills */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .tech-pill {
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #334155;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .tech-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+      border-color: #6366f1;
+      color: #6366f1;
+    }
+
+    /* Featured work section */
+    .featured-work {
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.5));
+      padding: 6rem 0;
+      margin-top: 4rem;
+    }
+
+    .work-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .work-card:hover::before {
+      opacity: 1;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.6;
+      animation: scrollBounce 2s infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      stroke: #6366f1;
     }
 
   </style>
@@ -104,6 +257,13 @@
 </head>
 
 <body>
+
+<!-- Background Elements -->
+<div class="gradient-bg"></div>
+<div class="dot-pattern"></div>
+<div class="gradient-orb orb1"></div>
+<div class="gradient-orb orb2"></div>
+<div class="gradient-orb orb3"></div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -129,110 +289,187 @@
   </div>
 </header>
 
-<!-- FLOATING BLOBS -->
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-
-<!-- PARALLAX SHAPES -->
-<div class="parallax-shape shape1"></div>
-<div class="parallax-shape shape2"></div>
-<div class="parallax-shape shape3"></div>
-
 <!-- MAIN -->
 <main>
 
-<section class="hero">
-  <div class="container hero-grid">
+<section class="hero-wrapper">
+  <div class="container">
+    <div class="hero-grid">
 
-    <!-- TEXT SIDE -->
-    <div class="hero-text reveal">
-      <div class="hero-badge-row">
-        <span class="badge">AI & ML Engineer</span>
-        <span class="badge badge-subtle">LLMs · Agentic AI · NLP</span>
-      </div>
-
-      <h1>
-        Building <span class="highlight">intelligent</span><br>
-        systems that scale.
-      </h1>
-
-      <p class="hero-subtitle">
-        I am Devesh, a Data Scientist & AI Engineer with 4+ years of hands-on experience 
-        building production ML systems at Publicis Sapient, HiLabs, Spring Financials, and Auxia.  
-        Currently pursuing MSCS at UW–Madison.
-      </p>
-
-      <!-- ROTATING TEXT -->
-      <div class="rotate-wrapper">
-        Passionate about <span id="rotate-text"></span><span class="cursor"></span>
-      </div>
-
-      <!-- CTA BUTTONS -->
-      <div class="hero-cta-row">
-        <a class="btn btn-primary" href="https://embeddings-researcher.streamlit.app/" target="_blank">
-          🚀 Live Demo: Embeddings Researcher
-        </a>
-        <a class="btn btn-ghost" href="projects.html">Explore Projects</a>
-      </div>
-    </div>
-
-    <!-- PANEL -->
-    <div class="hero-panel reveal">
-      <div class="hero-panel-inner">
-        <h3>Snapshot</h3>
-
-        <div class="hero-stat-row">
-          <div class="hero-stat">
-            <div class="hero-stat-label">Industry</div>
-            <div class="hero-stat-value">4+ years</div>
-          </div>
-
-          <div class="hero-stat">
-            <div class="hero-stat-label">Specialty</div>
-            <div class="hero-stat-value">NLP · LLMs · RAG</div>
-          </div>
-
-          <div class="hero-stat">
-            <div class="hero-stat-label">Currently</div>
-            <div class="hero-stat-value">MSCS @ UW–Madison</div>
-          </div>
+      <!-- TEXT SIDE -->
+      <div class="hero-text reveal" style="max-width: 650px;">
+        <div class="hero-badge-row">
+          <span class="badge">AI & ML Engineer</span>
+          <span class="badge badge-subtle">LLMs · Agentic AI · NLP</span>
         </div>
 
-        <div class="hero-chip-row">
-          <span class="hero-chip">Transformers</span>
-          <span class="hero-chip">Agent Workflows</span>
-          <span class="hero-chip">Semantic Search</span>
-          <span class="hero-chip">PyTorch · LangGraph</span>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin: 1.5rem 0 1rem; font-weight: 800;">
+          Building <span class="highlight">intelligent systems</span> that drive real-world impact
+        </h1>
+
+        <p class="hero-subtitle" style="font-size: 1.1rem; line-height: 1.7; color: #475569;">
+          Data Scientist & AI Engineer with <strong>4+ years</strong> of hands-on experience
+          crafting production ML systems at <strong>Publicis Sapient</strong>, <strong>HiLabs</strong>,
+          <strong>Spring Financials</strong>, and <strong>Auxia</strong>. Currently pursuing
+          <strong>MSCS at UW–Madison</strong>, deepening expertise in scalable AI architecture.
+        </p>
+
+        <!-- TYPEWRITER TEXT -->
+        <div class="typewriter">
+          <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+        </div>
+
+        <!-- TECH STACK -->
+        <div class="tech-stack">
+          <span class="tech-pill">PyTorch</span>
+          <span class="tech-pill">Transformers</span>
+          <span class="tech-pill">LangChain</span>
+          <span class="tech-pill">LangGraph</span>
+          <span class="tech-pill">RAG Systems</span>
+          <span class="tech-pill">Vector DBs</span>
+          <span class="tech-pill">TensorFlow</span>
+          <span class="tech-pill">Kubernetes</span>
+        </div>
+
+        <!-- CTA BUTTONS -->
+        <div class="hero-cta-row" style="margin-top: 2.5rem;">
+          <a class="btn btn-primary" href="https://embeddings-researcher.streamlit.app/" target="_blank">
+            View Live Demo
+          </a>
+          <a class="btn btn-ghost" href="projects.html">Explore Projects</a>
+          <a class="btn btn-ghost" href="contact.html">Get in Touch</a>
         </div>
       </div>
+
     </div>
 
+    <!-- STATS GRID -->
+    <div class="stats-grid reveal" style="margin-top: 4rem;">
+      <div class="stat-card">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">ML Projects</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Research Papers</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Publications</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
   </div>
 </section>
 
-<!-- QUICK CARDS -->
-<section class="section section-alt">
-  <div class="container grid-3">
-
-    <div class="card reveal">
-      <h3>About me</h3>
-      <p>From IIT BHU to ML engineering roles across healthcare, fintech, and AI startups.</p>
-      <a class="text-link" href="about.html">My story →</a>
+<!-- FEATURED WORK -->
+<section class="featured-work">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Featured Work</h2>
+      <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+        A selection of projects showcasing expertise in AI, machine learning, and scalable system design
+      </p>
     </div>
 
-    <div class="card reveal">
-      <h3>Experience</h3>
-      <p>Built NLP products at scale, deployed ML services, and led key LLM initiatives.</p>
-      <a class="text-link" href="experience.html">Experience →</a>
+    <div class="grid-3">
+      <div class="work-card reveal">
+        <div style="margin-bottom: 1rem;">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6366f1; font-weight: 600; margin-bottom: 0.75rem;">RAG SYSTEM</div>
+          <h3 style="font-size: 1.35rem; margin: 0 0 0.75rem; font-weight: 700;">Embeddings Researcher</h3>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+            Production-ready RAG pipeline with advanced retrieval techniques, semantic search, and intelligent document processing.
+          </p>
+        </div>
+        <ul class="pill-list">
+          <li>LangChain</li>
+          <li>Pinecone</li>
+          <li>OpenAI</li>
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <a class="text-link" href="https://embeddings-researcher.streamlit.app/" target="_blank">View Live Demo →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div style="margin-bottom: 1rem;">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a855f7; font-weight: 600; margin-bottom: 0.75rem;">NLP PIPELINE</div>
+          <h3 style="font-size: 1.35rem; margin: 0 0 0.75rem; font-weight: 700;">Clinical Text Analysis</h3>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+            Automated medical document processing with entity recognition, classification, and intelligent summarization.
+          </p>
+        </div>
+        <ul class="pill-list">
+          <li>BERT</li>
+          <li>Transformers</li>
+          <li>FastAPI</li>
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <a class="text-link" href="projects.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div style="margin-bottom: 1rem;">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #ec4899; font-weight: 600; margin-bottom: 0.75rem;">AGENTIC AI</div>
+          <h3 style="font-size: 1.35rem; margin: 0 0 0.75rem; font-weight: 700;">Multi-Agent Workflows</h3>
+          <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+            Orchestrated AI agents for complex task automation, leveraging LangGraph for stateful workflows.
+          </p>
+        </div>
+        <ul class="pill-list">
+          <li>LangGraph</li>
+          <li>GPT-4</li>
+          <li>Redis</li>
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <a class="text-link" href="projects.html">Explore Project →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE AREAS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem;">Areas of Expertise</h2>
+      <p style="font-size: 1.05rem; color: #64748b;">Specialized skills across the AI/ML technology stack</p>
     </div>
 
-    <div class="card reveal">
-      <h3>Projects</h3>
-      <p>RAG systems, agentic pipelines, embeddings explorers, custom training loops.</p>
-      <a class="text-link" href="projects.html">See projects →</a>
-    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #6366f1, #a855f7); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.5rem;">🤖</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">LLMs & Generative AI</h3>
+        <p style="line-height: 1.6;">Fine-tuning, prompt engineering, and deploying large language models for production applications with RAG and agent-based architectures.</p>
+      </div>
 
+      <div class="card reveal">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.5rem;">🔍</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">NLP & Text Analytics</h3>
+        <p style="line-height: 1.6;">Named entity recognition, sentiment analysis, text classification, and semantic search using transformer-based models and vector embeddings.</p>
+      </div>
+
+      <div class="card reveal">
+        <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ec4899, #f97316); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.5rem;">⚙️</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">MLOps & Deployment</h3>
+        <p style="line-height: 1.6;">Building scalable ML pipelines, containerization with Docker/Kubernetes, model monitoring, and CI/CD for production ML systems.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -253,56 +490,125 @@
 document.getElementById("year").innerText = new Date().getFullYear();
 
 /* -------------------------------------
-   Parallax movement of shapes on mouse
+   Typewriter effect
 ---------------------------------------*/
-document.addEventListener("mousemove", (e) => {
-  const shapes = document.querySelectorAll(".parallax-shape");
-  shapes.forEach((shape, idx) => {
-    const factor = (idx + 1) * 0.015;
-    const x = e.clientX * factor;
-    const y = e.clientY * factor;
-    shape.style.transform = `translate(${x}px, ${y}px)`;
-  });
-});
-
-/* -------------------------------------
-   Rotating typewriter text
----------------------------------------*/
-const rotatePhrases = [
-  "LLMs & agentic AI",
-  "retrieval-augmented generation",
-  "PyTorch-based model training",
-  "NLP systems that scale",
-  "AI applied to real-world products"
+const phrases = [
+  "Specializing in LLMs and agentic AI architectures",
+  "Building production-ready RAG systems",
+  "Transforming research into scalable solutions",
+  "Crafting intelligent NLP pipelines",
+  "Deploying ML systems that drive business value"
 ];
-let rp = 0;
-let char = 0;
-let deleting = false;
 
-function rotateTick() {
-  const el = document.getElementById("rotate-text");
-  const phrase = rotatePhrases[rp];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 80;
 
-  if (!deleting) {
-    char++;
-    if (char === phrase.length + 1) {
-      deleting = true;
-      setTimeout(rotateTick, 900);
-      return;
+function typeEffect() {
+  const element = document.getElementById("typewriter-text");
+  const currentPhrase = phrases[phraseIndex];
+
+  if (!isDeleting) {
+    element.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentPhrase.length) {
+      isDeleting = true;
+      typingSpeed = 1500; // Pause at end
+    } else {
+      typingSpeed = 80;
     }
   } else {
-    char--;
-    if (char === 0) {
-      deleting = false;
-      rp = (rp + 1) % rotatePhrases.length;
+    element.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+    typingSpeed = 40;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typingSpeed = 500; // Pause before next phrase
     }
   }
 
-  el.textContent = phrase.substring(0, char);
-  setTimeout(rotateTick, deleting ? 45 : 65);
+  setTimeout(typeEffect, typingSpeed);
 }
 
-rotateTick();
+// Start typewriter effect
+setTimeout(typeEffect, 1000);
+
+/* -------------------------------------
+   Scroll reveal animations
+---------------------------------------*/
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('reveal-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* -------------------------------------
+   Parallax orb movement on mouse
+---------------------------------------*/
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX / window.innerWidth - 0.5;
+  mouseY = e.clientY / window.innerHeight - 0.5;
+});
+
+function animateOrbs() {
+  currentX += (mouseX - currentX) * 0.05;
+  currentY += (mouseY - currentY) * 0.05;
+
+  const orbs = document.querySelectorAll('.gradient-orb');
+  orbs.forEach((orb, index) => {
+    const factor = (index + 1) * 20;
+    orb.style.transform = `translate(${currentX * factor}px, ${currentY * factor}px)`;
+  });
+
+  requestAnimationFrame(animateOrbs);
+}
+
+animateOrbs();
+
+/* -------------------------------------
+   Scroll indicator hide on scroll
+---------------------------------------*/
+window.addEventListener('scroll', () => {
+  const indicator = document.querySelector('.scroll-indicator');
+  if (indicator) {
+    if (window.scrollY > 100) {
+      indicator.style.opacity = '0';
+      indicator.style.pointerEvents = 'none';
+    } else {
+      indicator.style.opacity = '0.6';
+      indicator.style.pointerEvents = 'auto';
+    }
+  }
+});
+
+/* -------------------------------------
+   Smooth scroll for scroll indicator
+---------------------------------------*/
+document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth'
+  });
+});
 </script>
 
 </body>
