@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects | Devesh Maheshwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">DM</span>
+        <span class="logo-text">Devesh Maheshwari</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="nav-active">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="https://github.com/Devesh-Maheshwari" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>
+            A mix of shipped work, ongoing experiments, and slots reserved
+            for future LLM and agentic AI projects.
+          </p>
+        </div>
+
+        <!-- Current Highlight Projects -->
+        <div class="projects-grid">
+          <article class="project-card glass">
+            <div class="project-tag">LLMs • Embeddings • Research</div>
+            <h3>Embeddings Researcher — Comparing Representation Learning Methods</h3>
+            <p>
+              A research-oriented Streamlit app to compare TF-IDF, Skip-gram,
+              CBOW, and GloVe embeddings — exploring when each representation
+              method works best and how they affect downstream tasks.
+            </p>
+            <ul class="project-bullets">
+              <li>Implemented core algorithms from scratch in PyTorch / NumPy.</li>
+              <li>Interactive UI for neighborhoods, similarities, and analogies.</li>
+              <li>Designed to help users build intuition for “how embeddings think”.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn btn-primary btn-sm"
+                 href="https://embeddings-researcher.streamlit.app/"
+                 target="_blank">Live Demo</a>
+              <a class="btn btn-ghost btn-sm"
+                 href="https://github.com/Devesh-Maheshwari"
+                 target="_blank">Code (repo link)</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tag">Agentic AI • RAG • Healthcare</div>
+            <h3>Clinical QA Agent with Retrieval-Augmented Generation</h3>
+            <p>
+              Multi-agent workflow where one agent retrieves & ranks medical
+              evidence, another synthesizes answers, and a critic agent checks
+              for hallucinations before responses are surfaced.
+            </p>
+            <ul class="project-bullets">
+              <li>Built with LangGraph, LangChain, and a vector database.</li>
+              <li>Distinct agent roles (retriever, generator, verifier).</li>
+              <li>Focus on traceability and “show your work” chains of thought.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn btn-ghost btn-sm"
+                 href="https://github.com/Devesh-Maheshwari"
+                 target="_blank">Repo (placeholder)</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Future Project Placeholders -->
+        <h3 class="subsection-title">Coming soon</h3>
+        <p class="subsection-subtitle">
+          These are intentional placeholders — as I push more projects to GitHub / Hugging Face,
+          I’ll link them here.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-tag">Agentic AI</div>
+            <h3>AgentBench: Evaluating Multi-Agent LLM Workflows</h3>
+            <p>
+              A small benchmark suite for comparing agentic LLM setups: single-agent vs
+              multi-agent, with different planning and tool-calling strategies.
+            </p>
+            <ul class="project-bullets">
+              <li>Task templates for retrieval, planning, tool use.</li>
+              <li>Evaluation metrics beyond accuracy (latency, cost, stability).</li>
+            </ul>
+            <div class="project-links">
+              <span class="btn btn-ghost btn-sm disabled">Coming soon</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tag">RAG • Evaluation</div>
+            <h3>RAGEval: Debugger for Retrieval-Augmented Generation</h3>
+            <p>
+              A toolkit to inspect retrieval quality, context construction,
+              and answer grounding — with side-by-side comparisons of different retrievers and rerankers.
+            </p>
+            <ul class="project-bullets">
+              <li>Visualize query → top-k documents → final answer.</li>
+              <li>Hooks for LLM-as-a-judge and human evaluation.</li>
+            </ul>
+            <div class="project-links">
+              <span class="btn btn-ghost btn-sm disabled">Coming soon</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tag">Vision • Deep Learning</div>
+            <h3>Vision Transformer from Scratch</h3>
+            <p>
+              A PyTorch implementation of a compact Vision Transformer, trained on
+              a small image dataset, focusing on clarity of code and explanatory visuals.
+            </p>
+            <ul class="project-bullets">
+              <li>Step-by-step, well-documented implementation.</li>
+              <li>Side-by-side with a ResNet baseline.</li>
+            </ul>
+            <div class="project-links">
+              <span class="btn btn-ghost btn-sm disabled">Coming soon</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Devesh Maheshwari</span>
+      <span class="footer-meta">
+        <a href="https://github.com/Devesh-Maheshwari" target="_blank">GitHub</a>
+        ·
+        <a href="https://huggingface.co" target="_blank">(+ future HF Spaces)</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

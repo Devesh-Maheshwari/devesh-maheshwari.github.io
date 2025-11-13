@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | Devesh Maheshwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">DM</span>
+        <span class="logo-text">Devesh Maheshwari</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="nav-active">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="https://github.com/Devesh-Maheshwari" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About me</h2>
+          <p>
+            A brief story of how I went from IIT (BHU) to building production ML systems
+            and now to graduate school in the U.S.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Journey</h3>
+            <p>
+              I did my B.Tech in Electrical Engineering at IIT (BHU) Varanasi, where I gravitated
+              quickly toward algorithms, probability, and natural language processing. That mix of
+              math and language pushed me into applied machine learning. :contentReference[oaicite:2]{index=2}
+            </p>
+            <p>
+              After graduation, I spent several years as a Data Scientist across consulting and
+              product teams, working on NLP, personalization, and ML infrastructure. I’ve built
+              chatbots, clinical NLP systems, and uplift models that directly moved business metrics.
+            </p>
+            <p>
+              Today, I’m pursuing an M.S. in Computer Science at the University of Wisconsin–Madison,
+              deepening my understanding of advanced NLP, machine learning, databases, and operating
+              systems while continuing to build practical AI systems.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>What I like working on</h3>
+            <ul class="project-bullets">
+              <li>Agentic AI systems that chain tools, retrieval, and reasoning.</li>
+              <li>Retrieval-augmented generation with robust evaluation.</li>
+              <li>Embeddings: learning, comparing, and debugging representations.</li>
+              <li>Clinical and structured NLP for high-stakes domains.</li>
+              <li>MLOps: taking models from notebook to production.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:1.8rem;">
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="project-bullets">
+              <li>
+                <strong>M.S. in Computer Science</strong>, University of Wisconsin–Madison<br/>
+                Focus: Advanced NLP, Machine Learning, Topics in DBMS, Operating Systems
+              </li>
+              <li>
+                <strong>B.Tech. in Electrical Engineering</strong>, IIT (BHU) Varanasi<br/>
+                Courses: Data Structures & Algorithms, NLP, Probability & Statistics, Operations Research
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Outside work</h3>
+            <p>
+              I enjoy trading and playing table tennis. Both reward discipline, risk management,
+              and fast feedback loops — the same mindset I bring to designing and stress-testing
+              ML systems.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Devesh Maheshwari</span>
+      <span class="footer-meta">
+        <a href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a> ·
+        <a href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

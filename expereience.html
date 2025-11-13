@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experience | Devesh Maheshwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">DM</span>
+        <span class="logo-text">Devesh Maheshwari</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html" class="nav-active">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p>
+            Roles across startups and consulting, with a consistent focus on NLP, LLMs,
+            and making ML systems production-ready. :contentReference[oaicite:3]{index=3}
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <p class="exp-role">Data Scientist — Auxia</p>
+            <p class="exp-meta">Jan 2025 – Aug 2025 · Bengaluru, India</p>
+            <ul class="exp-bullets">
+              <li>Built standalone treatment embedding pipelines (OpenAI + SBERT) with enriched metadata, improving target prediction accuracy and enabling client-specific flexibility.</li>
+              <li>Automated and standardized ML training workflows with orchestration tools, cutting manual coding and training time while enabling cron-scheduled deployments.</li>
+              <li>Prototyped behavioral segmentation using LLM-generated user summaries from event logs to uncover latent user groups and improve CTR models.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <p class="exp-role">Data Scientist II — HiLabs</p>
+            <p class="exp-meta">Apr 2023 – Jan 2025 · Pune, India</p>
+            <ul class="exp-bullets">
+              <li>Led clinical NLP initiatives for a flagship Provider Directory Accuracy product, helping win multi-million-dollar Fortune 500 contracts.</li>
+              <li>Applied LLMs and encoder-based models (T5, BioBERT, Mistral, LLaMA) for entity extraction and abbreviation expansion, reaching high F1 scores while optimizing latency.</li>
+              <li>Contributed to RAG-style QA systems for healthcare clients by building strong entity-level representations from charts and web content.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <p class="exp-role">Senior Associate, Data Scientist — Publicis Sapient</p>
+            <p class="exp-meta">Jun 2021 – Apr 2023 · Gurugram, India</p>
+            <ul class="exp-bullets">
+              <li>Converted multiple NLP models into containerized microservices on AWS (ECS/EKS), improving scalability and reducing cloud costs.</li>
+              <li>Designed an AI-enabled chatbot for a large financial client, significantly reducing manual support needs and case volumes.</li>
+              <li>Built a video processing pipeline to generate transcripts and searchable MCQs, cutting manual content preparation time.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <p class="exp-role">Earlier projects & internships</p>
+            <p class="exp-meta">IIT (BHU) and early roles</p>
+            <ul class="exp-bullets">
+              <li>Projects in networks, security, and traditional ML that led to my IEEE Chilecon 2021 publication.</li>
+              <li>Course and project work in algorithms, NLP, and optimization that laid the foundation for my current work.</li>
+            </ul>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Devesh Maheshwari</span>
+      <span class="footer-meta">
+        Full experience details on <a href="https://www.linkedin.com/in/devesh32/" target="_blank">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

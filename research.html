@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research | Devesh Maheshwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">DM</span>
+        <span class="logo-text">Devesh Maheshwari</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html" class="nav-active">Research</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline"
+           href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ&hl=en"
+           target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Research</h2>
+          <p>
+            I like problems at the boundary between theory and deployment —
+            methods that can actually run inside systems.
+          </p>
+        </div>
+
+        <div class="research-list">
+          <article class="research-item">
+            <div class="research-meta">IEEE Chilecon 2021 · Network Security</div>
+            <h3>An Empirical Evaluation of Machine Learning for Hardening Security Devices in Data Networks</h3>
+            <p>
+              Evaluated machine learning approaches to improve robustness of security devices in
+              networked environments, combining traffic analysis, anomaly detection, and deployment tradeoffs.
+            </p>
+            <a class="text-link"
+               href="https://ieeexplore.ieee.org/document/9703085"
+               target="_blank">View on IEEE Xplore →</a>
+          </article>
+
+          <!-- Placeholder for future research -->
+          <article class="research-item">
+            <div class="research-meta">LLMs · Agentic AI · Ongoing</div>
+            <h3>Understanding Failure Modes in Multi-Agent LLM Systems (Working)</h3>
+            <p>
+              Exploratory work on when multi-agent setups actually help vs hurt: compounding errors,
+              coordination overhead, and how to design evaluation that detects silent failures.
+            </p>
+            <p class="contact-note-footnote">
+              Draft in progress — will be linked here and on Google Scholar when available.
+            </p>
+          </article>
+
+          <article class="research-item">
+            <div class="research-meta">RAG · Evaluation · Upcoming</div>
+            <h3>Probing RAG Pipelines via Perturbation-Based Evaluation (Planned)</h3>
+            <p>
+              A planned line of work on evaluating retrieval-augmented generation by perturbing both
+              documents and queries, and scoring the sensitivity and robustness of systems end-to-end.
+            </p>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:2rem;">
+          <h3>More</h3>
+          <p>
+            For a complete and always up-to-date list of publications and citations,
+            please visit my Google Scholar profile:
+          </p>
+          <a class="btn btn-primary btn-sm"
+             href="https://scholar.google.com/citations?user=LO_Q4z8AAAAJ&hl=en"
+             target="_blank">Open Google Scholar</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Devesh Maheshwari</span>
+      <span class="footer-meta">
+        Research · LLMs · Agentic AI
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

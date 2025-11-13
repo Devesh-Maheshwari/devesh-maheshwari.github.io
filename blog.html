@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog | Devesh Maheshwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">DM</span>
+        <span class="logo-text">Devesh Maheshwari</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="blog.html" class="nav-active">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="https://medium.com" target="_blank">(+ Medium, later)</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Writing & Notes</h2>
+          <p>
+            Short essays, experiment logs, and distilled notes. Right now these
+            are placeholders — as I formalize posts, I will link them here.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-tag">Embeddings • Representation Learning</div>
+            <h3>When TF-IDF Still Wins Against Neural Embeddings</h3>
+            <p>
+              A practical look at where classic sparse methods beat dense embeddings,
+              and how I design experiments to choose the right representation for a task.
+            </p>
+            <a class="text-link" href="#"
+               onclick="alert('Later: link to a Markdown/Medium post with this title.'); return false;">
+              Read (coming soon) →
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-tag">Agentic AI • Systems</div>
+            <h3>Designing Multi-Agent Workflows with LangGraph</h3>
+            <p>
+              Notes from building agentic systems where retrievers, generators, and
+              critics collaborate — and what actually matters in evaluation.
+            </p>
+            <a class="text-link" href="#"
+               onclick="alert('Later: link to a blog post or notebook.'); return false;">
+              Read (coming soon) →
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-tag">Career • Reflection</div>
+            <h3>From Classical ML to LLM-First Systems</h3>
+            <p>
+              How my work evolved from traditional machine learning and uplift modeling
+              to building LLM-centric, agentic products.
+            </p>
+            <a class="text-link" href="#"
+               onclick="alert('Later: link to Medium / GitHub Pages Markdown article.'); return false;">
+              Read (coming soon) →
+            </a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Devesh Maheshwari</span>
+      <span class="footer-meta">
+        Writing in progress · Check back soon
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
